@@ -28,3 +28,8 @@
  * 
  * I do enjoy functional programing like in question 1, but this being php, lets create a class for this.
  */
+
+include __DIR__ . '/SwitchTel/EmailFromString.php';
+
+$string = "This is a string that contains an email address, and it has to be found, find the email find@me.com in it";
+$email = new SwitchTel\EmailFromString($string);
