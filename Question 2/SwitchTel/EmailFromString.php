@@ -3,27 +3,27 @@ namespace SwitchTel;
 class EmailFromString {
 
 	private string $email = 'String does not contain a email';
-	private array $potentialMatches = []; //Words containing the @ symbol
+	private array $potentialEmails = []; //Words containing the @ symbol
 	/**
 	 * @param string $string
 	 */
 	public function __construct(private string $string) {
-		$this->findAtWords();
+		$this->findPotentialEmails();
 	}
 
 
-	private function findAtWords() {
+	private function findPotentialEmails(): void {
 		$words = explode(" ", $this->string);
 
-		$this->potentialMatches = array_filter($words, function($word)
+		$this->potentialEmails = array_filter($words, function($word)
 		{
 			return strpos($word, "@");
 		});
-		var_dump($this->potentialMatches);
+		var_dump($this->potentialEmails);
 	}
 
 
-	public function getEmail() {
+	public function getEmail(): string {
 		return $this->email;
 	}
 
