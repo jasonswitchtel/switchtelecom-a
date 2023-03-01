@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Example sting: "This is a string that contains an email address, and it has to be found, find the email find@me.com in it"
  *
@@ -27,6 +26,10 @@
  * - Validate these words, stop and return on first valid email, return message if none is found.
  * 
  * I do enjoy functional programing like in question 1, but this being php, lets create a class for this.
+ *
+ * Notes after writing the code:
+ * I realised that array_filter would not be ideal, as I only want to find the first match and not all matches.
+ * Instead, I used a for loop for the words, testing each word if it matches, and breaking the loop if a match is found.
  */
 
 include __DIR__ . '/SwitchTel/EmailFromString.php';
