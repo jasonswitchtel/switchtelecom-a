@@ -21,10 +21,10 @@
  * I think it might be better convert the string to a array first using explode on spaces. Then we already have the string broken up into words. I should be able to use array_filter to find all words containing a "@" symbol, and then from those results validate them until the first valid email is found.
  *
  * So the process will be:
- * - Input a string containing exactly one email address.
+ * - Input a string containing zero or one email address. 
  * - Explode string into words.
  * - Find words containing a "@" symbol.
- * - Validate these words, stop and return on first valid email.
+ * - Validate these words, stop and return on first valid email, return message if none is found.
  * 
  * I do enjoy functional programing like in question 1, but this being php, lets create a class for this.
  */
