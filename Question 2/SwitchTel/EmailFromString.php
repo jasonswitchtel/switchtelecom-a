@@ -34,14 +34,7 @@ class EmailFromString {
 	 * -- min two characters - Top level domain
 	 */
 	private function isValidEmail(string $email): bool {
-		$email = trim($email, ",.!?()[]{}\t\n\r\0\x0B'\""); //Trim some potential troublemaker characters.
-		$atPos = strpos($email, "@");
-		$dotPos = strpos($email, ".");
-		return (
-			$atPos >= 2  // >= 2 makes sure that the word has at least two characters before the "@"
-			&& $dotPos >= $atPos + 3
-			&& strlen($email) >= $dotPos + 3
-		);
+		return filter_var($email, FILTER_VALIDATE_EMAIL);
 	}
 
 
